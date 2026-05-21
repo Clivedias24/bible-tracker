@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beautiful, serene, and vintage-styled Bible reading tracker based on random drawings from the Old and New Testaments.">
+  <title>Scriptura ✦ Antique Bible Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Scripture Quote Ticker -->
+  <div class="ticker-banner" id="ticker-banner-container">
+    <div id="quote-ticker-text" class="ticker-content">
+      "For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, plans to give you hope and a future."
+      <span class="ticker-ref">Jeremiah 29:11</span>
+    </div>
+  </div>
+
+  <!-- Main Content Layout -->
+  <main class="container">
+    
+    <!-- Header -->
+    <header class="main-header">
+      <h1 class="site-title font-decorative" id="site-title-id">Scriptura</h1>
+      <p class="site-subtitle font-roman" id="site-subtitle-id">The Literary Bible Reading Companion</p>
+    </header>
+
+    <!-- Drawing Console -->
+    <section class="console-card" id="drawing-console-section">
+      <p class="section-instruction">Select a Testament, then draw a book at random to guide your next reading journey.</p>
+      
+      <!-- Pool Selectors -->
+      <div class="pool-selector" id="testament-pool-selector">
+        <label class="pool-option">
+          <input type="radio" name="testament-pool" value="OT" checked id="radio-ot-pool">
+          <span class="pool-label font-roman">Old Testament</span>
+        </label>
+        
+        <label class="pool-option">
+          <input type="radio" name="testament-pool" value="NT" id="radio-nt-pool">
+          <span class="pool-label font-roman">New Testament</span>
+        </label>
+      </div>
+
+      <!-- Draw Button -->
+      <button class="btn-draw font-roman" id="btn-draw-book">✦ Draw Next Book ✦</button>
+    </section>
+
+    <!-- Draw Result Card Container -->
+    <section class="result-wrapper" id="draw-result-container">
+      <!-- Placeholder Card initially shown -->
+      <div class="placeholder-card" id="result-placeholder">
+        <div class="placeholder-icon">✦</div>
+        <p class="placeholder-text">Draw a book above to begin your reading</p>
+      </div>
+    </section>
+
+    <!-- Progress Dashboard -->
+    <section class="dashboard-card" id="progress-dashboard-section">
+      <h2 class="dashboard-title font-roman" id="dashboard-title-id">Your Reading Progress</h2>
+      
+      <!-- Old Testament Progress -->
+      <div class="progress-group" id="progress-group-ot">
+        <div class="progress-header">
+          <span class="progress-name font-roman">Old Testament</span>
+          <span class="progress-stats font-ui" id="stats-text-ot">0 / 46 completed (0%)</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-bar-fill-ot"></div>
+        </div>
+      </div>
+
+      <!-- New Testament Progress -->
+      <div class="progress-group" id="progress-group-nt">
+        <div class="progress-header">
+          <span class="progress-name font-roman">New Testament</span>
+          <span class="progress-stats font-ui" id="stats-text-nt">0 / 27 completed (0%)</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-bar-fill-nt"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Completed Books Shelf -->
+    <section class="shelf-section" id="completed-shelf-section">
+      <h2 class="shelf-title font-roman" id="shelf-title-id">Completed Shelf</h2>
+      
+      <div class="shelf-tabs" id="shelf-filter-tabs">
+        <button class="shelf-tab active" data-filter="all" id="tab-filter-all">All Books</button>
+        <button class="shelf-tab" data-filter="OT" id="tab-filter-ot">Old Testament</button>
+        <button class="shelf-tab" data-filter="NT" id="tab-filter-nt">New Testament</button>
+      </div>
+
+      <div class="shelf-grid" id="completed-shelf-grid">
+        <!-- Dynmically filled with completed book elements -->
+        <div class="shelf-empty" id="shelf-empty-msg">No books completed yet on this journey.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer" id="main-footer-id">
+    <div class="container">
+      <p class="footer-text font-roman">"Thy word is a lamp unto my feet, and a light unto my path." ✦ Psalm 119:105</p>
+      <p class="footer-text font-ui" style="opacity: 0.6; font-size: 0.75rem;">Scriptura Bible Tracker &copy; 2026. Made with reverence.</p>
+      <button class="btn-reset font-ui" id="btn-reset-journey">Reset Journey</button>
+    </div>
+  </footer>
+
+  <!-- Toast celebration notification -->
+  <div class="toast-msg font-roman" id="celebration-toast">
+    Book completed successfully!
+  </div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
